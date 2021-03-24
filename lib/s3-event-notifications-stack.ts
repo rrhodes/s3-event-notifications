@@ -10,13 +10,13 @@ export class S3EventNotificationsStack extends Stack {
     const bucket = new Bucket(this, 'Bucket', {
       autoDeleteObjects: true,
       blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
-      bucketKeyEnabled: true,
       encryption: BucketEncryption.S3_MANAGED,
       enforceSSL: true,
       removalPolicy: RemovalPolicy.DESTROY,
     });
 
     this.lambdaWithS3EventNotification(this, 'LambdaOne', bucket, 'subfolder-one');
+    this.lambdaWithS3EventNotification(this, 'LambdaTwo', bucket, 'subfolder-one/subfolder-two');
   }
 
   private lambdaWithS3EventNotification(
