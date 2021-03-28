@@ -4,7 +4,7 @@ CDK project for a Medium blog post about Amazon S3 Event Notifications.
 
 ## Architecture diagram
 
-![AWS architecture diagram](/docs/aws-architecture-diagram.png)
+![AWS architecture diagram](/docs/aws-architecture.png)
 
 ## Useful CDK commands
 
