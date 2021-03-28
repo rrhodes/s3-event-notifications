@@ -24,9 +24,10 @@ export default class S3EventNotificationsStack extends Stack {
       removalPolicy: RemovalPolicy.DESTROY,
     });
 
-    const eventNotificationParentFolder = 'test-folder';
     const parentFolderConsumerLambda = createS3EventNotificationConsumerLambda(this, 'ParentFolder');
     const subfolderConsumerLambda = createS3EventNotificationConsumerLambda(this, 'Subfolder');
+    
+    const eventNotificationParentFolder = 'test-folder';
     const s3EventNotificationRouterLambda = createS3EventNotificationRouterLambda(
       this, eventNotificationParentFolder, parentFolderConsumerLambda, subfolderConsumerLambda,
     );
